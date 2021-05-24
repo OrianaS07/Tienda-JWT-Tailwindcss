@@ -1,0 +1,37 @@
+<!-- <input type="text" [(ngModel)]="title">
+{{title}}
+
+<input type="text" [(ngModel)]="power">
+{{power | exponential}} -->
+
+
+<!-- ngIf - ondicionales -->
+<div *ngIf=" title === 'oriana'">
+  este es un div
+</div>
+
+<div *ngIf=" title === 'angie' ">
+  este es Angie
+</div>
+
+<div *ngIf=" title === 'luis' ">
+  este es luis
+</div>
+
+<div [ngSwitch]="title">
+  <p *ngSwitchCase="'oriana'">Este es Oriana</p>
+  <p *ngSwitchCase="'luis'">Este es Luis</p>
+  <p *ngSwitchCase="'angie'">Este es Angie</p>
+  <p *ngSwitchDefault>No hay match</p>
+</div>
+
+<button (click)="addItem()">Add Item</button>
+
+<!-- ngFor --- iterar elementos -->
+<ul>
+  <li *ngIf="items.length === 0">LA LISTA ESTA VACIA</li>
+  <li *ngFor="let name of items; index as i">
+    {{name}} {{i}}
+    <button (click)="deleteItem(i)">delete</button>
+  </li>
+</ul>
